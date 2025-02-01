@@ -1,23 +1,21 @@
-function calculateNetWorth() {
-    // Get user inputs
-    let assetA_future = parseFloat(document.getElementById("assetA_future").value);
-    let assetB_current = parseFloat(document.getElementById("assetB_current").value);
-    let assetB_rate = parseFloat(document.getElementById("assetB_rate").value) / 100;
-    let assetC_current = parseFloat(document.getElementById("assetC_current").value);
-    let assetC_rate = parseFloat(document.getElementById("assetC_rate").value) / 100;
+// Hardcoded values
+const assetA_future = 124338000; // Target amount of Asset A in 3 years
+const assetB_current = 450000; // Current price of Asset B
+const assetB_rate = 5 / 100; // Growth rate of Asset B (converted to decimal)
 
-    // Calculate Asset A's current value
-    let assetA_current = assetA_future / 3;
+// Display hardcoded values on the page
+document.getElementById("assetA_future").innerText = assetA_future;
+document.getElementById("assetB_current").innerText = assetB_current;
+document.getElementById("assetB_rate").innerText = (assetB_rate * 100) + "%";
 
-    // Calculate Asset B's current value (reverse compound interest)
-    let assetB_currentValue = assetB_current / Math.pow(1 + assetB_rate, 3);
+// Calculate Asset A's current value
+const assetA_current = assetA_future / 3;
 
-    // Calculate Asset C's current value (reverse compound interest)
-    let assetC_currentValue = assetC_current / Math.pow(1 + assetC_rate, 3);
+// Calculate Asset B's current value (reverse compound interest)
+const assetB_currentValue = assetB_current / Math.pow(1 + assetB_rate, 3);
 
-    // Total net worth
-    let netWorth = assetA_current + assetB_currentValue + assetC_currentValue;
+// Total net worth
+const netWorth = assetA_current + assetB_currentValue;
 
-    // Display result
-    document.getElementById("networth").innerText = netWorth.toFixed(2);
-}
+// Display result
+document.getElementById("networth").innerText = netWorth.toFixed(2);
