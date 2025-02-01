@@ -6,14 +6,22 @@ body {
     color: #FFFFFF;
 }
 
+/* Flexbox to align the two containers side by side */
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between boxes */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
 .container {
-    max-width: 400px;
-    margin: auto;
+    width: 400px;
     padding: 20px;
     border: 1px solid #444;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
-    background-color: #1e1e1e; /* Dark theme restored */
+    background-color: #4B0082; /* Dark Violet */
+    color: #FFFFFF;
 }
 
 p {
@@ -21,18 +29,18 @@ p {
     font-weight: bold;
 }
 
-p:nth-child(2) { color: #FFD700; }  /* Gold for Asset A */
-p:nth-child(3) { color: #FF4500; }  /* OrangeRed for Asset B */
+p:nth-child(2) { color: #DAA520; }  /* Darker Gold for Asset A */
+p:nth-child(3) { color: #FF6347; }  /* Tomato Red for Asset B */
 p:nth-child(4) { color: #1E90FF; }  /* DodgerBlue for Growth Rate */
 
 h2 {
-    color: #008000; /* Green for Net Worth */
+    color: #32CD32; /* Bright Green for Net Worth */
     margin-top: 20px;
     transition: color 0.5s ease-in-out;
 }
 
 h2:hover {
-    color: #32CD32; /* Lighter Green on Hover */
+    color: #00FF00; /* Lighter Green on Hover */
 }
 
 /* Label styling */
@@ -41,18 +49,24 @@ label {
     font-weight: bold;
 }
 
-/* Sky blue conversion rate box */
+/* Darker conversion rate input box */
 input {
-    width: 60px; /* Smaller width */
+    width: 60px;
     padding: 5px;
     margin-top: 10px;
     text-align: center;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #000;
-    background: #87CEEB; /* Sky blue background */
-    color: #000;
+    background: #2C2C2C; /* Dark Gray instead of White */
+    color: #FFFFFF;
     display: block;
-    margin: auto; /* Center the input box */
+    margin: auto;
     font-weight: bold;
+}
+
+/* Telugu Section */
+.telugu {
+    background-color: #3A006F; /* Darker Violet */
+    color: #FFFFFF;
 }
