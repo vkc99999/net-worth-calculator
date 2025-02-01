@@ -13,8 +13,7 @@ body {
     border: 1px solid #444;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
-    background-color: #87CEEB; /* Sky Blue Box */
-    color: black; /* Black text for better contrast */
+    background-color: #1e1e1e; /* Dark theme restored */
 }
 
 p {
@@ -36,12 +35,13 @@ h2:hover {
     color: #32CD32; /* Lighter Green on Hover */
 }
 
-/* Style for conversion rate input box */
+/* Label styling */
 label {
     font-size: 16px;
     font-weight: bold;
 }
 
+/* Sky blue conversion rate box */
 input {
     width: 60px; /* Smaller width */
     padding: 5px;
@@ -50,8 +50,9 @@ input {
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #000;
-    background: #FFF;
+    background: #87CEEB; /* Sky blue background */
     color: #000;
     display: block;
     margin: auto; /* Center the input box */
+    font-weight: bold;
 }
