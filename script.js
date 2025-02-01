@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // Get the latest conversion rate entered by the user
         let usdToInrRate = parseFloat(conversionRateInput.value) || 86.70;
 
-        // Add the savings accumulated in the last 10 milliseconds
-        totalNetWorthUSD += savingsPerMillisecond * 10; 
+        // Add the savings accumulated in the last 100 milliseconds
+        totalNetWorthUSD += savingsPerMillisecond * 100; 
 
         // Convert USD net worth to INR
         const netWorthINR = totalNetWorthUSD * usdToInrRate;
@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("networth_inr_telugu").innerText = netWorthINR.toFixed(6);
     }
 
-    // Run updateNetWorth every 10 milliseconds
-    setInterval(updateNetWorth, 10);
+    // Run updateNetWorth every 100 milliseconds (10 times per second)
+    setInterval(updateNetWorth, 100);
 
     // Ensure updates happen when conversion rate is changed
     conversionRateInput.addEventListener("input", updateNetWorth);
