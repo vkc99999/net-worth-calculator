@@ -36,8 +36,14 @@ h2:hover {
     color: #32CD32; /* Lighter Green on Hover */
 }
 
+/* Style for conversion rate input box */
+label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
 input {
-    width: 80px; /* Smaller box for conversion rate */
+    width: 60px; /* Smaller width */
     padding: 5px;
     margin-top: 10px;
     text-align: center;
@@ -46,4 +52,6 @@ input {
     border: 1px solid #000;
     background: #FFF;
     color: #000;
+    display: block;
+    margin: auto; /* Center the input box */
 }
