@@ -6,7 +6,7 @@ body {
     color: #FFFFFF;
 }
 
-/* Flexbox to align the two containers side by side */
+/* Flexbox to align sections side by side */
 .container-wrapper {
     display: flex;
     justify-content: center;
@@ -24,29 +24,12 @@ body {
     color: #FFFFFF;
 }
 
-p {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-p:nth-child(2) { color: #DAA520; }  /* Darker Gold for Asset A */
-p:nth-child(3) { color: #FF6347; }  /* Tomato Red for Asset B */
-p:nth-child(4) { color: #1E90FF; }  /* DodgerBlue for Growth Rate */
-
-h2 {
-    color: #32CD32; /* Bright Green for Net Worth */
-    margin-top: 20px;
-    transition: color 0.5s ease-in-out;
-}
-
-h2:hover {
-    color: #00FF00; /* Lighter Green on Hover */
-}
-
-/* Label styling */
-label {
-    font-size: 16px;
-    font-weight: bold;
+/* Ensure both sections have the same line height & structure */
+.container p,
+.container label,
+.container h2 {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Darker conversion rate input box */
@@ -58,7 +41,7 @@ input {
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #000;
-    background: #2C2C2C; /* Dark Gray instead of White */
+    background: #2C2C2C; /* Dark Gray */
     color: #FFFFFF;
     display: block;
     margin: auto;
@@ -69,4 +52,17 @@ input {
 .telugu {
     background-color: #3A006F; /* Darker Violet */
     color: #FFFFFF;
+}
+
+/* Ensuring Text Alignment */
+.text-row {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    width: 100%;
+}
+
+.text-row span {
+    flex: 1;
+    text-align: left;
 }
