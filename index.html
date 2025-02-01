@@ -8,14 +8,13 @@
 </head>
 <body>
 
-    <!-- Wrapper to align both sections side by side -->
     <div class="container-wrapper">
         <div class="container">
             <h1>Net Worth Calculator</h1>
             
-            <p><strong>Target Amount of Asset A (3 Years):</strong> <span id="assetA_future"></span></p>
-            <p><strong>Current Price of Asset B:</strong> <span id="assetB_current"></span></p>
-            <p><strong>Growth Rate of Asset B (% per year):</strong> <span id="assetB_rate"></span></p>
+            <div class="text-row"><span><strong>Target Amount of Asset A (3 Years):</strong></span> <span id="assetA_future"></span></div>
+            <div class="text-row"><span><strong>Current Price of Asset B:</strong></span> <span id="assetB_current"></span></div>
+            <div class="text-row"><span><strong>Growth Rate of Asset B (% per year):</strong></span> <span id="assetB_rate"></span></div>
 
             <label for="conversion_rate">Using a conversion rate of:</label>
             <input type="number" id="conversion_rate" value="86.70" step="0.000001">
@@ -25,13 +24,12 @@
             <p>INR: ₹<span id="networth_inr">Calculating...</span></p>
         </div>
 
-        <!-- Telugu Box -->
         <div class="container telugu">
             <h1>నికర సంపద గణన</h1>
-            
-            <p><strong>ఆస్తి A లక్ష్య మొత్తం (3 సంవత్సరాలు):</strong> <span id="assetA_future_telugu"></span></p>
-            <p><strong>ఆస్తి B ప్రస్తుత ధర:</strong> <span id="assetB_current_telugu"></span></p>
-            <p><strong>ఆస్తి B వృద్ధి రేటు (% సంవత్సరానికి):</strong> <span id="assetB_rate_telugu"></span></p>
+
+            <div class="text-row"><span><strong>ఆస్తి A లక్ష్య మొత్తం (3 సంవత్సరాలు):</strong></span> <span id="assetA_future_telugu"></span></div>
+            <div class="text-row"><span><strong>ఆస్తి B ప్రస్తుత ధర:</strong></span> <span id="assetB_current_telugu"></span></div>
+            <div class="text-row"><span><strong>ఆస్తి B వృద్ధి రేటు (% సంవత్సరానికి):</strong></span> <span id="assetB_rate_telugu"></span></div>
 
             <label>కన్వర్షన్ రేట్:</label>
             <input type="number" id="conversion_rate_telugu" value="86.70" step="0.000001" disabled>
