@@ -9,15 +9,23 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("assetB_current").innerText = assetB_current;
     document.getElementById("assetB_rate").innerText = (assetB_rate * 100) + "%";
 
-    // Calculate Asset A's current value
-    const assetA_current = assetA_future / 3;
+    function updateNetWorth() {
+        // Calculate Asset A's current value
+        const assetA_current = assetA_future / 3;
 
-    // Calculate Asset B's current value (reverse compound interest)
-    const assetB_currentValue = assetB_current / Math.pow(1 + assetB_rate, 3);
+        // Calculate Asset B's current value (reverse compound interest)
+        const assetB_currentValue = assetB_current / Math.pow(1 + assetB_rate, 3);
 
-    // Total net worth
-    const netWorth = assetA_current + assetB_currentValue;
+        // Total net worth
+        const netWorth = assetA_current + assetB_currentValue;
 
-    // Display result
-    document.getElementById("networth").innerText = netWorth.toFixed(2);
+        // Display result (rounded to 2 decimal places)
+        document.getElementById("networth").innerText = netWorth.toFixed(2);
+    }
+
+    // Update net worth immediately
+    updateNetWorth();
+
+    // Update net worth dynamically every second
+    setInterval(updateNetWorth, 1000);
 });
