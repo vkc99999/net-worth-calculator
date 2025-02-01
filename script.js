@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded", function() {
         // Get the latest conversion rate from user input
         let usdToInrRate = parseFloat(conversionRateInput.value) || 86.70;
 
+        // Simulate dynamic changes (random fluctuations for realism)
+        let fluctuation = (Math.random() * 10 - 5) / 100; // ±5% fluctuation
+        usdToInrRate += usdToInrRate * fluctuation;
+
         // Calculate Asset A's current value
         const assetA_current = assetA_future / 3;
 
@@ -31,12 +35,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("networth_inr").innerText = netWorthINR.toFixed(6);
     }
 
-    // Update net worth immediately
-    updateNetWorth();
+    // Update net worth dynamically every second
+    setInterval(updateNetWorth, 1000);
 
-    // Update net worth dynamically when conversion rate changes
+    // Update net worth whenever conversion rate changes
     conversionRateInput.addEventListener("input", updateNetWorth);
 
-    // Update net worth every second dynamically
-    setInterval(updateNetWorth, 1000);
+    // Initial calculation
+    updateNetWorth();
 });
