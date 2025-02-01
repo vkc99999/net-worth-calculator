@@ -23,10 +23,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const netWorthINR = totalNetWorthUSD * usdToInrRate;
 
         // Display updated values in both English & Telugu sections
-        document.getElementById("networth_usd").innerText = totalNetWorthUSD.toFixed(6);
-        document.getElementById("networth_inr").innerText = netWorthINR.toFixed(6);
-        document.getElementById("networth_usd_telugu").innerText = totalNetWorthUSD.toFixed(6);
-        document.getElementById("networth_inr_telugu").innerText = netWorthINR.toFixed(6);
+        document.getElementById("networth_usd").innerText = totalNetWorthUSD.toFixed(2);
+        document.getElementById("networth_inr").innerText = netWorthINR.toFixed(2);
+        document.getElementById("networth_usd_telugu").innerText = totalNetWorthUSD.toFixed(2);
+        document.getElementById("networth_inr_telugu").innerText = netWorthINR.toFixed(2);
     }
 
     // Run updateNetWorth every 100 milliseconds (10 times per second)
