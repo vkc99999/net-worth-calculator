@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Hardcoded values
-    const assetA_future = 124338000; // Target amount of Asset A in 3 years
+    const assetA_future = 1384125; // Target amount of Asset A in 3 years
     const assetB_current = 450000; // Current price of Asset B
     const assetB_rate = 5 / 100; // Growth rate of Asset B (converted to decimal)
 
