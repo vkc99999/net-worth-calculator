@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const assetA_future = 1384125; // Target amount of Asset A in 3 years
     const assetB_current = 450000; // Current price of Asset B
     const assetB_rate = 5 / 100; // Growth rate of Asset B (converted to decimal)
+    const conversionRateInput = document.getElementById("conversion_rate");
 
     // Display hardcoded values on the page
     document.getElementById("assetA_future").innerText = assetA_future;
@@ -10,22 +11,32 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("assetB_rate").innerText = (assetB_rate * 100) + "%";
 
     function updateNetWorth() {
+        // Get the latest conversion rate from user input
+        let usdToInrRate = parseFloat(conversionRateInput.value) || 86.70;
+
         // Calculate Asset A's current value
         const assetA_current = assetA_future / 3;
 
         // Calculate Asset B's current value (reverse compound interest)
         const assetB_currentValue = assetB_current / Math.pow(1 + assetB_rate, 3);
 
-        // Total net worth
-        const netWorth = assetA_current + assetB_currentValue;
+        // Total net worth in USD
+        const netWorthUSD = assetA_current + assetB_currentValue;
 
-        // Display result (rounded to 2 decimal places)
-        document.getElementById("networth").innerText = netWorth.toFixed(2);
+        // Convert net worth to INR
+        const netWorthINR = netWorthUSD * usdToInrRate;
+
+        // Display results (rounded to 6 decimal places)
+        document.getElementById("networth_usd").innerText = netWorthUSD.toFixed(6);
+        document.getElementById("networth_inr").innerText = netWorthINR.toFixed(6);
     }
 
     // Update net worth immediately
     updateNetWorth();
 
-    // Update net worth dynamically every second
+    // Update net worth dynamically when conversion rate changes
+    conversionRateInput.addEventListener("input", updateNetWorth);
+
+    // Update net worth every second dynamically
     setInterval(updateNetWorth, 1000);
 });
