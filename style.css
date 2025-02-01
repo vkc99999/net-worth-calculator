@@ -24,27 +24,29 @@ body {
     color: #FFFFFF;
 }
 
-/* Ensure both sections have the same line height & structure */
-.container p,
-.container label,
-.container h2 {
+/* Making key text colorful */
+.summary-text { color: #FFD700; font-size: 18px; font-weight: bold; } /* Gold */
+.conversion-label { color: #00FF7F; font-weight: bold; } /* Spring Green */
+.net-worth { color: #32CD32; font-weight: bold; } /* Lime Green */
+
+/* Align conversion rate input box on the same line */
+.conversion-rate {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 /* Darker conversion rate input box */
 input {
-    width: 60px;
+    width: 80px;
     padding: 5px;
-    margin-top: 10px;
     text-align: center;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #000;
     background: #2C2C2C; /* Dark Gray */
     color: #FFFFFF;
-    display: block;
-    margin: auto;
     font-weight: bold;
 }
 
@@ -52,17 +54,4 @@ input {
 .telugu {
     background-color: #3A006F; /* Darker Violet */
     color: #FFFFFF;
-}
-
-/* Ensuring Text Alignment */
-.text-row {
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-    width: 100%;
-}
-
-.text-row span {
-    flex: 1;
-    text-align: left;
 }
