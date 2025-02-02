@@ -52,11 +52,11 @@ h1, h2, p, .conversion-rate {
 }
 
 /* 🔹 **Colored Text for Readability** */
-h1.title { color: #A020F0; }  /* Electric Purple */
-h2.target-text { color: #39FF14; }  /* Neon Green */
-p.description { color: #FF4500; }  /* Fiery Red */
-.conversion-label { color: #00FFFF; }  /* Brilliant Cyan */
-.net-worth { color: #FFD700; }  /* Dazzling Gold */
+h1.title { color: #bf7cf2; }
+h2.target-text { color: #1cff8e; }  /* Neon Green */
+p.description { color: #f76228; }  /* Fiery Red */
+.conversion-label { color: #26a4ed; }  /* Brilliant Cyan */
+.net-worth { color: #fca919; }  /* Dazzling Gold */
 
 /* 🔹 **Final Fix for Last Two Lines (Brighter & More Visible)** */
 p.last-line-1 { 
