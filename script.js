@@ -15,10 +15,24 @@ document.addEventListener("DOMContentLoaded", function() {
         totalNetWorthUSD += savingsPerMillisecond * 100;
         const netWorthINR = totalNetWorthUSD * usdToInrRate;
 
-        document.getElementById("networth_usd").innerText = totalNetWorthUSD.toFixed(2);
-        document.getElementById("networth_inr").innerText = netWorthINR.toFixed(2);
-        document.getElementById("networth_usd_telugu").innerText = totalNetWorthUSD.toFixed(2);
-        document.getElementById("networth_inr_telugu").innerText = netWorthINR.toFixed(2);
+        // Ensure elements exist before updating
+        let networthUsdElem = document.getElementById("networth_usd");
+        let networthInrElem = document.getElementById("networth_inr");
+        let networthUsdTeluguElem = document.getElementById("networth_usd_telugu");
+        let networthInrTeluguElem = document.getElementById("networth_inr_telugu");
+
+        if (networthUsdElem && networthInrElem) {
+            networthUsdElem.innerText = `$${totalNetWorthUSD.toFixed(2)}`;
+            networthInrElem.innerText = `₹${netWorthINR.toFixed(2)}`;
+            networthUsdTeluguElem.innerText = `$${totalNetWorthUSD.toFixed(2)}`;
+            networthInrTeluguElem.innerText = `₹${netWorthINR.toFixed(2)}`;
+
+            // Apply correct styles dynamically
+            networthUsdElem.classList.add("last-line-1");
+            networthInrElem.classList.add("last-line-2");
+            networthUsdTeluguElem.classList.add("last-line-1");
+            networthInrTeluguElem.classList.add("last-line-2");
+        }
     }
 
     setInterval(updateNetWorth, 100);
