@@ -23,16 +23,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setInterval(updateNetWorth, 100);
 
-    // Circle Movement Logic with Collision Prevention
+    // Moving Circles Without Collisions
     const circles = document.querySelectorAll(".container");
-    const speed = 0.2;
+    const speed = 0.08; // Slower movement
     let positions = [];
 
     function isOverlapping(x1, y1, r1, x2, y2, r2) {
         const dx = x2 - x1;
         const dy = y2 - y1;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        return distance < (r1 + r2); // True if overlapping
+        return distance < (r1 + r2);
     }
 
     circles.forEach((circle, index) => {
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
             pos.x += pos.dx;
             pos.y += pos.dy;
 
-            // Check for collisions with other circles and adjust
+            // Prevent Circles from Touching
             positions.forEach((other, otherIndex) => {
                 if (index !== otherIndex) {
                     if (isOverlapping(pos.x, pos.y, pos.size / 2, other.x, other.y, other.size / 2)) {
