@@ -5,7 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
         let usdToInrRate = parseFloat(conversionRateInput.value) || 86.70;
         let targetUsd = 2085056.25;
         let targetInr = targetUsd * usdToInrRate;
-        let currentUsd = targetUsd * (0.41 + Math.random() * 0.2); // Simulate real-time value
+
+        // Ensure real-time variation within reasonable range
+        let fluctuationFactor = 0.02 + Math.random() * 0.02; // 2-4% variation
+        let currentUsd = targetUsd * (1 - fluctuationFactor);
         let currentInr = currentUsd * usdToInrRate;
 
         document.getElementById("target_usd").innerText = `$${targetUsd.toFixed(2)}`;
@@ -19,14 +22,14 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(updateTargetConversion, 100); // Update every 100ms (10 times per second)
     updateTargetConversion();
 
-    // Movement Logic with Collision Prevention
+    // Circle Movement Fixes (Ensure Circles Stay Inside)
     const circles = document.querySelectorAll(".container");
-    const speed = 0.2; // Slower speed for smooth movement
+    const speed = 0.15; // Slower for better control
     let positions = [];
 
     circles.forEach((circle, index) => {
-        let x = Math.random() * (window.innerWidth - circle.clientWidth - 20);
-        let y = Math.random() * (window.innerHeight - circle.clientHeight - 20);
+        let x = Math.random() * (window.innerWidth - circle.clientWidth - 10);
+        let y = Math.random() * (window.innerHeight - circle.clientHeight - 10);
         let dx = (Math.random() * 2 - 1) * speed;
         let dy = (Math.random() * 2 - 1) * speed;
 
@@ -42,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let maxWidth = window.innerWidth - rect.width;
             let maxHeight = window.innerHeight - rect.height;
 
-            // Bounce off walls
+            // Ensure Circles Stay Inside
             if (pos.x <= 0 || pos.x >= maxWidth) {
                 pos.dx *= -1;
                 pos.x = Math.max(0, Math.min(pos.x, maxWidth));
@@ -52,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 pos.y = Math.max(0, Math.min(pos.y, maxHeight));
             }
 
-            // Update position
+            // Update Position
             pos.x += pos.dx;
             pos.y += pos.dy;
             circle.style.left = `${pos.x}px`;
