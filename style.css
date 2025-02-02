@@ -27,7 +27,7 @@ body {
     min-height: 350px;
     padding: 15px;
     border-radius: 50%;
-    background: rgba(30, 30, 30, 0.8); /* Darker background for better contrast */
+    background: rgba(30, 30, 30, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,9 +41,9 @@ body {
 /* **Refined Color Palette** */
 h1.title { color: #FFD700; }  /* Gold */
 h2.target-text { color: #40E0D0; }  /* Turquoise */
-p.description { color: #FF6347; }  /* Coral */
-.conversion-label { color: #4169E1; }  /* Royal Blue */
-.net-worth { color: #C0C0C0; }  /* Silver */
+p.description { color: #FFB6C1; }  /* Light Pink */
+.conversion-label { color: #87CEFA; }  /* Bright Sky Blue */
+.net-worth { color: #FFFF99; }  /* Light Yellow */
 
 /* Larger Font Size & Better Spacing */
 h1, h2, p, .conversion-rate {
