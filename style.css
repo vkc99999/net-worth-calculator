@@ -14,15 +14,15 @@ body {
     height: 100vh;
 }
 
-/* Smaller, Transparent Circles */
+/* Smaller, Grey-Transparent Circles */
 .container {
-    width: 30vw;
-    height: 30vw;
-    min-width: 250px;
-    min-height: 250px;
+    width: 25vw;
+    height: 25vw;
+    min-width: 200px;
+    min-height: 200px;
     padding: 10px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.6); /* Black with transparency */
+    background: rgba(50, 50, 50, 0.7); /* Grey and translucent */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,14 +34,14 @@ body {
 }
 
 /* Different colors for better readability */
-h1 { color: #FFCC00; } /* Gold */
+h1 { color: #FFD700; } /* Gold */
 h2 { color: #00FFFF; } /* Cyan */
-p { color: #FF99CC; } /* Soft Pink */
+p { color: #FFA500; } /* Orange */
 .summary-text { color: #99FF33; } /* Light Green */
-.conversion-label { color: #FF6600; } /* Orange */
+.conversion-label { color: #FF4500; } /* Deep Orange */
 
 .conversion-rate {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 input[type="number"] {
