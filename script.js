@@ -21,14 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Movement Logic with Collision Prevention
     const circles = document.querySelectorAll(".container");
-    const speed = 0.3;
+    const speed = 0.2; // Slower speed for smooth movement
     let positions = [];
 
     circles.forEach((circle, index) => {
-        let x = Math.random() * (window.innerWidth - circle.clientWidth);
-        let y = Math.random() * (window.innerHeight - circle.clientHeight);
-        let dx = Math.random() * 2 - 1;
-        let dy = Math.random() * 2 - 1;
+        let x = Math.random() * (window.innerWidth - circle.clientWidth - 20);
+        let y = Math.random() * (window.innerHeight - circle.clientHeight - 20);
+        let dx = (Math.random() * 2 - 1) * speed;
+        let dy = (Math.random() * 2 - 1) * speed;
 
         positions.push({ x, y, dx, dy });
         circle.style.left = `${x}px`;
@@ -38,18 +38,23 @@ document.addEventListener("DOMContentLoaded", function () {
     function moveCircles() {
         circles.forEach((circle, index) => {
             let pos = positions[index];
+            let rect = circle.getBoundingClientRect();
+            let maxWidth = window.innerWidth - rect.width;
+            let maxHeight = window.innerHeight - rect.height;
 
-            // Bounce off the walls
-            if (pos.x <= 0 || pos.x + circle.clientWidth >= window.innerWidth) {
+            // Bounce off walls
+            if (pos.x <= 0 || pos.x >= maxWidth) {
                 pos.dx *= -1;
+                pos.x = Math.max(0, Math.min(pos.x, maxWidth));
             }
-            if (pos.y <= 0 || pos.y + circle.clientHeight >= window.innerHeight) {
+            if (pos.y <= 0 || pos.y >= maxHeight) {
                 pos.dy *= -1;
+                pos.y = Math.max(0, Math.min(pos.y, maxHeight));
             }
 
             // Update position
-            pos.x += pos.dx * speed;
-            pos.y += pos.dy * speed;
+            pos.x += pos.dx;
+            pos.y += pos.dy;
             circle.style.left = `${pos.x}px`;
             circle.style.top = `${pos.y}px`;
         });
