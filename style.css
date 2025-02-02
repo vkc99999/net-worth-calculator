@@ -1,19 +1,19 @@
 body {
+    margin: 0;
+    padding: 0;
     overflow: hidden;
-    background-color: #000;
-}
-
-#particles-js {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
 }
 
 .container-wrapper {
-    position: relative;
-    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .container {
@@ -21,35 +21,44 @@ body {
     height: 30vw;
     min-width: 250px;
     min-height: 250px;
-    padding: 15px;
+    padding: 20px;
     border-radius: 50%;
-    background: rgba(75, 0, 130, 0.3);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
-    color: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: absolute;
-    animation: floatAnimation 12s infinite ease-in-out alternate, moveAround 20s infinite linear;
-    margin: 5px;
+    position: relative;
 }
 
-@keyframes floatAnimation {
-    from {
-        transform: translateY(-5px) rotate(2deg) scale(1);
-    }
-    to {
-        transform: translateY(5px) rotate(-2deg) scale(1.02);
-    }
+/* Custom colors */
+.container:nth-child(1) { background: rgba(128, 0, 128, 0.3); }
+.container:nth-child(2) { background: rgba(25, 25, 112, 0.3); }
+
+h1, h2, p {
+    margin: 10px 0;
 }
 
-@keyframes moveAround {
-    0% { top: 10%; left: 10%; }
-    25% { top: 20%; left: 80%; }
-    50% { top: 80%; left: 60%; }
-    75% { top: 50%; left: 20%; }
-    100% { top: 10%; left: 10%; }
+.conversion-rate {
+    margin-top: 15px;
+}
+
+.conversion-label {
+    font-size: 14px;
+}
+
+input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    margin-left: 5px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+}
+
+input[type="number"]:disabled {
+    opacity: 0.6;
 }
