@@ -14,44 +14,49 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5vw;
+    gap: 4vw;
     flex-wrap: wrap;
 }
 
-/* Circle Styling (Better Text Containment) */
+/* 🔹 **Smaller Circle & Better Spacing** */
 .container {
-    width: 38vw;
-    height: 38vw;
-    min-width: 350px;
-    min-height: 350px;
-    padding: 10px;
+    width: 34vw; /* Reduced size */
+    height: 34vw;
+    min-width: 300px;
+    min-height: 300px;
+    padding: 15px;
     border-radius: 50%;
-    background: rgba(30, 30, 30, 0.85); /* Dark but slightly transparent */
+    background: rgba(20, 20, 20, 0.85); /* Slightly darker */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: absolute;
-    border: 3px solid rgba(255, 255, 255, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
-    overflow: hidden; /* Ensures text never leaves the circle */
+    overflow: hidden; /* Ensures text always stays inside */
 }
 
-/* **Brightened Color Palette (Better Visibility)** */
-h1.title { color: #8B5CF6; }  /* Vivid Amethyst */
-h2.target-text { color: #4CAF50; }  /* Bright Emerald */
-p.description { color: #FF6B6B; }  /* Soft Coral */
-.conversion-label { color: #00BFFF; }  /* Bright Cyan */
-.net-worth { color: #E1AD01; }  /* Golden Sand Beige */
+/* **🔥 ULTRA BRIGHT COLOR PALETTE** */
+h1.title { color: #BF40BF; }  /* Electric Purple */
+h2.target-text { color: #39FF14; }  /* Neon Green */
+p.description { color: #FF4500; }  /* Fiery Red */
+.conversion-label { color: #00FFFF; }  /* Brilliant Cyan */
+.net-worth { color: #FFD700; }  /* Dazzling Gold */
 
-/* Font Size & Layout Adjustments */
+/* 🔹 **Last Two Key Lines** - Extra Bright */
+p.highlight-1 { color: #FF9F00; font-weight: bold; }  /* Blazing Orange */
+p.highlight-2 { color: #FF00FF; font-weight: bold; }  /* Vivid Magenta */
+
+/* 🔹 **Better Text Spacing & Wrapping** */
 h1, h2, p, .conversion-rate {
-    margin: 4px 0;
+    margin: 5px 0;
     padding: 2px 6px;
-    font-size: 1.2vw; /* Slightly reduced to keep text inside */
+    font-size: 1.1vw; /* Slightly smaller to fit better */
     text-align: center;
-    line-height: 1.3em; /* Better spacing */
+    line-height: 1.4em; /* More spacing for multiple lines */
+    word-wrap: break-word; /* Ensures text breaks into multiple lines */
 }
 
 /* Adjust Input Box */
