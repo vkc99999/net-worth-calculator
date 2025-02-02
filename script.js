@@ -5,9 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
         let usdToInrRate = parseFloat(conversionRateInput.value) || 86.70;
         let targetUsd = 2085056.25;
         let targetInr = targetUsd * usdToInrRate;
+        let currentUsd = targetUsd * (0.41 + Math.random() * 0.2); // Simulate real-time value
+        let currentInr = currentUsd * usdToInrRate;
 
         document.getElementById("target_usd").innerText = `$${targetUsd.toFixed(2)}`;
         document.getElementById("target_inr").innerText = `₹${targetInr.toFixed(2)}`;
+        document.getElementById("networth_usd").innerText = `$${currentUsd.toFixed(2)}`;
+        document.getElementById("networth_inr").innerText = `₹${currentInr.toFixed(2)}`;
+        document.getElementById("networth_usd_telugu").innerText = `$${currentUsd.toFixed(2)}`;
+        document.getElementById("networth_inr_telugu").innerText = `₹${currentInr.toFixed(2)}`;
     }
 
     setInterval(updateTargetConversion, 100); // Update every 100ms (10 times per second)
@@ -46,24 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
             pos.y += pos.dy * speed;
             circle.style.left = `${pos.x}px`;
             circle.style.top = `${pos.y}px`;
-
-            // Prevent circles from colliding
-            circles.forEach((otherCircle, otherIndex) => {
-                if (index !== otherIndex) {
-                    let rect1 = circle.getBoundingClientRect();
-                    let rect2 = otherCircle.getBoundingClientRect();
-
-                    if (
-                        rect1.left < rect2.right &&
-                        rect1.right > rect2.left &&
-                        rect1.top < rect2.bottom &&
-                        rect1.bottom > rect2.top
-                    ) {
-                        pos.dx *= -1;
-                        pos.dy *= -1;
-                    }
-                }
-            });
         });
 
         requestAnimationFrame(moveCircles);
