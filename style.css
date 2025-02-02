@@ -15,19 +15,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5vw; /* Space between circles */
+    gap: 5vw;
     flex-wrap: wrap;
 }
 
-/* Circles (Now Bigger & Well-Fitting) */
+/* Bigger Circles to Fit Content */
 .container {
-    width: 34vw; /* Slightly bigger */
-    height: 34vw;
-    min-width: 300px;
-    min-height: 300px;
+    width: 38vw; /* Increased to fit text */
+    height: 38vw;
+    min-width: 350px;
+    min-height: 350px;
     padding: 10px;
     border-radius: 50%;
-    background: rgba(50, 50, 50, 0.7); /* Grey and translucent */
+    background: rgba(50, 50, 50, 0.7); /* Grey Translucent */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,25 +38,24 @@ body {
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
 }
 
-/* Ensure All Text Fits Inside Circles */
+/* Different Colors for Each Sentence */
+h1.title { color: #FFD700; }  /* Gold */
+h2.target-text { color: #32CD32; }  /* Lime Green */
+p.description { color: #FF4500; }  /* Orange Red */
+.conversion-label { color: #4B0082; }  /* Indigo */
+.net-worth { color: #8B0000; }  /* Maroon */
+p.usd-text { color: #4682B4; }  /* Steel Blue */
+p.inr-text { color: #C0C0C0; }  /* Silver */
+
+/* Adjust Text Spacing */
 h1, h2, p, .conversion-rate {
     margin: 3px 0; /* Reduce space */
     padding: 2px 8px;
-    font-size: 1.1vw;
+    font-size: 1vw;
     text-align: center;
 }
 
-/* Custom Colors for Different Sentences */
-h1 { color: #FFD700; }  /* Gold */
-h2 { color: #00FF7F; }  /* Spring Green */
-p { color: #FF7F50; }  /* Coral */
-.summary-text { color: #9370DB; }  /* Mulberry */
-.conversion-label { color: #4B0082; }  /* Indigo */
-.net-worth { color: #8B0000; }  /* Maroon */
-span { color: #C0C0C0; }  /* Silver */
-label { color: #FF4500; }  /* Deep Orange */
-
-/* Adjust input box */
+/* Adjust Input Box */
 input[type="number"] {
     width: 70px;
     padding: 3px;
