@@ -1,3 +1,4 @@
+/* 🔹 General Styling */
 body {
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@ body {
     background-size: cover;
 }
 
+/* 🔹 Wrapper to Center Circles */
 .container-wrapper {
     position: relative;
     width: 100vw;
@@ -18,15 +20,15 @@ body {
     flex-wrap: wrap;
 }
 
-/* 🔹 **Bigger Circles for More Text Space** */
+/* 🔹 Circles Styling */
 .container {
-    width: 37vw;
-    height: 37vw;
-    min-width: 330px;
-    min-height: 330px;
-    padding: 30px; /* More padding to ensure space */
+    width: 35vw; /* Reduced to ensure space */
+    height: 35vw;
+    min-width: 300px;
+    min-height: 300px;
+    padding: 25px; /* Ensures space for text */
     border-radius: 50%;
-    background: rgba(20, 20, 20, 0.85);
+    background: rgba(20, 20, 20, 0.85); /* Dark translucent */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,40 +40,64 @@ body {
     overflow: hidden;
 }
 
-/* **🔥 Font Colors (Bright & Different)** */
-h1.title { color: #A020F0; font-size: 1.8vw; font-weight: bold; }  /* Electric Purple */
-h2.target-text { color: #39FF14; font-size: 1.5vw; font-weight: bold; }  /* Neon Green */
-p.description { color: #FF4500; font-size: 1.3vw; font-weight: bold; }  /* Fiery Red */
-.conversion-label { color: #00FFFF; font-size: 1.2vw; font-weight: bold; }  /* Brilliant Cyan */
-.net-worth { color: #FFD700; font-size: 1.3vw; font-weight: bold; }  /* Dazzling Gold */
+/* 🔹 Font Styling (Bright & Readable) */
+h1.title { color: #A020F0; font-size: 2vw; font-weight: bold; }  /* Electric Purple */
+h2.target-text { color: #39FF14; font-size: 1.8vw; font-weight: bold; }  /* Neon Green */
+p.description { color: #FF4500; font-size: 1.5vw; font-weight: bold; }  /* Fiery Red */
+.conversion-label { color: #00FFFF; font-size: 1.4vw; font-weight: bold; }  /* Brilliant Cyan */
+.net-worth { color: #FFD700; font-size: 1.5vw; font-weight: bold; }  /* Dazzling Gold */
 
-/* 🔹 **Last Two Lines (Brightest & Different)** */
-p.last-line-1 { color: #FF1493; font-size: 1.3vw; font-weight: bold; }  /* Deep Pink */
-p.last-line-2 { color: #FF4500; font-size: 1.3vw; font-weight: bold; }  /* Orange-Red */
+/* 🔹 **Last Two Lines - Brighter & More Visible** */
+p.last-line-1 { 
+    color: #FF1493; /* Hot Pink */
+    font-size: 1.6vw;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px rgba(255, 20, 147, 0.7); /* Glow effect */
+}  
 
-/* 🔹 **Ensure All Text Fits Inside the Circle** */
+p.last-line-2 { 
+    color: #FFA500; /* Bright Orange */
+    font-size: 1.6vw;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px rgba(255, 165, 0, 0.7); /* Glow effect */
+}  
+
+/* 🔹 Ensure All Text Fits Inside Circles */
 h1, h2, p, .conversion-rate {
-    margin: 4px 0;
-    padding: 5px 6px;
-    font-size: 1.3vw;
+    margin: 5px 0;
+    padding: 5px;
+    font-size: 1.4vw;
     text-align: center;
     line-height: 1.3em;
     word-wrap: break-word;
 }
 
-/* Adjust Input Box */
+/* 🔹 Adjust Input Box */
 input[type="number"] {
     width: 75px;
-    padding: 5px;
+    padding: 6px;
     margin-left: 5px;
     background: transparent;
     border: 2px solid white;
     color: white;
     text-align: center;
-    font-size: 1.3vw;
+    font-size: 1.4vw;
     font-weight: bold;
 }
 
 input[type="number"]:disabled {
     opacity: 0.8;
+}
+
+/* 🔹 **Animations for Smooth Movement (Prevent Collision)** */
+@keyframes moveAround {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(10vw, 5vh); }
+    50% { transform: translate(-8vw, -5vh); }
+    75% { transform: translate(6vw, -3vh); }
+    100% { transform: translate(0, 0); }
+}
+
+.container {
+    animation: moveAround 20s infinite linear alternate;
 }
