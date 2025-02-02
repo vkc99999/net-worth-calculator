@@ -5,24 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Net Worth Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <div id="particles-js"></div>
+
     <div class="container-wrapper">
         <div class="container">
             <h1>Net Worth Calculator</h1>
-            <h2 id="target_2027">2027 Year-End Target: <span id="target_usd">$2,085,056.25</span> (<span id="target_inr">₹180,774,376.88</span>)</h2>
-            <p>Considering a 3-year land investment target price, plus a 5% increase rate of remaining assets, plus monthly savings of approximately $5000</p>
+
+            <h2 class="summary-text" id="target_2027">
+                2027 Year-End Target: <span id="target_usd">$2,085,056.25</span> 
+                (<span id="target_inr">₹180,774,376.88</span>) 
+                (using dollar conversion rate <span id="conversion_display">86.70</span>)
+            </h2>
+
+            <p class="summary-text">
+                Considering a 3-year land investment target price, plus a 5% increase rate of remaining assets, plus monthly savings of approximately $5000
+            </p>
+
             <div class="conversion-rate">
-                <label for="conversion_rate">Using a conversion rate of:</label>
+                <label class="conversion-label" for="conversion_rate">Using a conversion rate of:</label>
                 <input type="number" id="conversion_rate" value="86.70" step="0.000001">
             </div>
-            <h2>Velicheti's Current Net Worth:</h2>
+
+            <h2 class="net-worth">Velicheti's Current Net Worth:</h2>
             <p>USD: $<span id="networth_usd">Calculating...</span></p>
             <p>INR: ₹<span id="networth_inr">Calculating...</span></p>
         </div>
+
+        <div class="container">
+            <h1>నికర సంపద గణన</h1>
+
+            <h2 class="summary-text" id="target_2027_telugu">
+                2027 సంవత్సరం చివరి లక్ష్యం: <span id="target_usd_telugu">$2,085,056.25</span> 
+                (<span id="target_inr_telugu">₹180,774,376.88</span>) 
+                (డాలర్ మార్పిడి రేటు <span id="conversion_display_telugu">86.70</span> ఉపయోగించి)
+            </h2>
+
+            <p class="summary-text">
+                3 సంవత్సరాల మూలధన భూ పెట్టుబడి లక్ష్య ధరను పరిగణనలోకి తీసుకుని, మిగిలిన ఆస్తుల 5% వృద్ధి రేటు, మరియు నెలసరి సుమారు $5000 పొదుపు
+            </p>
+
+            <div class="conversion-rate">
+                <label class="conversion-label">కన్వర్షన్ రేట్:</label>
+                <input type="number" id="conversion_rate_telugu" value="86.70" step="0.000001" disabled>
+            </div>
+
+            <h2 class="net-worth">వేలిచేటి వారి ప్రస్తుత నికర సంపద:</h2>
+            <p>USD: $<span id="networth_usd_telugu">Calculating...</span></p>
+            <p>INR: ₹<span id="networth_inr_telugu">Calculating...</span></p>
+        </div>
     </div>
+
     <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const conversionRateInput = document.getElementById("conversion_rate");
+
+            function updateTargetConversion() {
+                let usdToInrRate = parseFloat(conversionRateInput.value) || 86.70;
+                let targetUsd = 2085056.25;
+                let targetInr = targetUsd * usdToInrRate;
+
+                document.getElementById("target_usd").innerText = `$${targetUsd.toFixed(2)}`;
+                document.getElementById("target_inr").innerText = `₹${targetInr.toFixed(2)}`;
+                document.getElementById("conversion_display").innerText = usdToInrRate;
+
+                document.getElementById("target_usd_telugu").innerText = `$${targetUsd.toFixed(2)}`;
+                document.getElementById("target_inr_telugu").innerText = `₹${targetInr.toFixed(2)}`;
+                document.getElementById("conversion_display_telugu").innerText = usdToInrRate;
+            }
+
+            conversionRateInput.addEventListener("input", updateTargetConversion);
+            updateTargetConversion();
+        });
+    </script>
 </body>
 </html>
