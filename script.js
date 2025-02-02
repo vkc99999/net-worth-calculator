@@ -1,40 +1,60 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Hardcoded values
-    const assetA_future = 1384125; // Target amount of Asset A in 3 years
-    const assetB_current = 450000; // Current price of Asset B
-    const assetB_rate = 5 / 100; // Growth rate of Asset B (% per year)
-    const conversionRateInput = document.getElementById("conversion_rate");
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+}
 
-    // Splitting $5000 per month into per-millisecond increments
-    const monthlySavings = 5000; 
-    const savingsPerMillisecond = monthlySavings / (30 * 24 * 60 * 60 * 1000);
+.container-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
 
-    // Initial net worth calculation
-    let totalNetWorthUSD = (assetA_future / 3) + (assetB_current / Math.pow(1 + assetB_rate, 3));
+/* Circle Design with Purple Fill */
+.container {
+    width: 40vw;
+    height: 40vw;
+    min-width: 300px;
+    min-height: 300px;
+    padding: 20px;
+    border-radius: 50%;
+    background: rgba(75, 0, 130, 0.8); /* Purple */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Border for enclosure */
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
 
-    function updateNetWorth() {
-        // Get the latest conversion rate entered by the user
-        let usdToInrRate = parseFloat(conversionRateInput.value) || 86.70;
+/* Modern Color Scheme with Dark Text */
+h1, h2, p {
+    color: #111; /* Dark Text */
+}
 
-        // Add the savings accumulated in the last 100 milliseconds
-        totalNetWorthUSD += savingsPerMillisecond * 100; 
+.conversion-rate {
+    margin-top: 15px;
+}
 
-        // Convert USD net worth to INR
-        const netWorthINR = totalNetWorthUSD * usdToInrRate;
+.conversion-label {
+    font-size: 14px;
+}
 
-        // Display updated values in both English & Telugu sections
-        document.getElementById("networth_usd").innerText = totalNetWorthUSD.toFixed(2);
-        document.getElementById("networth_inr").innerText = netWorthINR.toFixed(2);
-        document.getElementById("networth_usd_telugu").innerText = totalNetWorthUSD.toFixed(2);
-        document.getElementById("networth_inr_telugu").innerText = netWorthINR.toFixed(2);
-    }
+input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    margin-left: 5px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+}
 
-    // Run updateNetWorth every 100 milliseconds (10 times per second)
-    setInterval(updateNetWorth, 100);
-
-    // Ensure updates happen when conversion rate is changed
-    conversionRateInput.addEventListener("input", updateNetWorth);
-
-    // Run first update immediately
-    updateNetWorth();
-});
+input[type="number"]:disabled {
+    opacity: 0.6;
+}
