@@ -47,19 +47,19 @@ p.description { color: #FF4500; font-size: 1.5vw; font-weight: bold; }  /* Fiery
 .conversion-label { color: #00FFFF; font-size: 1.4vw; font-weight: bold; }  /* Brilliant Cyan */
 .net-worth { color: #FFD700; font-size: 1.5vw; font-weight: bold; }  /* Dazzling Gold */
 
-/* 🔹 **Last Two Lines - Brighter & More Visible** */
+/* 🔹 **Last Two Lines - Enhanced Visibility** */
 p.last-line-1 { 
-    color: #FF1493; /* Hot Pink */
-    font-size: 1.6vw;
+    color: #FF69B4; /* Brighter Pink */
+    font-size: 1.8vw;
     font-weight: bold;
-    text-shadow: 0px 0px 10px rgba(255, 20, 147, 0.7); /* Glow effect */
+    text-shadow: 0px 0px 12px rgba(255, 105, 180, 0.8); /* Stronger glow */
 }  
 
 p.last-line-2 { 
-    color: #FFA500; /* Bright Orange */
-    font-size: 1.6vw;
+    color: #FFA07A; /* Light Salmon */
+    font-size: 1.8vw;
     font-weight: bold;
-    text-shadow: 0px 0px 10px rgba(255, 165, 0, 0.7); /* Glow effect */
+    text-shadow: 0px 0px 12px rgba(255, 160, 122, 0.8); /* Stronger glow */
 }  
 
 /* 🔹 Ensure All Text Fits Inside Circles */
