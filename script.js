@@ -1,60 +1,47 @@
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: white;
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const conversionRateInput = document.getElementById("conversion_rate");
 
-.container-wrapper {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-}
+    function updateTargetConversion() {
+        let usdToInrRate = parseFloat(conversionRateInput.value) || 86.70;
+        let targetUsd = 2085056.25;
+        let targetInr = targetUsd * usdToInrRate;
 
-/* Circle Design with Purple Fill */
-.container {
-    width: 40vw;
-    height: 40vw;
-    min-width: 300px;
-    min-height: 300px;
-    padding: 20px;
-    border-radius: 50%;
-    background: rgba(75, 0, 130, 0.8); /* Purple */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: absolute;
-    border: 2px solid rgba(255, 255, 255, 0.3); /* Border for enclosure */
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-}
+        document.getElementById("target_usd").innerText = `$${targetUsd.toFixed(2)}`;
+        document.getElementById("target_inr").innerText = `₹${targetInr.toFixed(2)}`;
+    }
 
-/* Modern Color Scheme with Dark Text */
-h1, h2, p {
-    color: #111; /* Dark Text */
-}
+    conversionRateInput.addEventListener("input", updateTargetConversion);
+    updateTargetConversion();
 
-.conversion-rate {
-    margin-top: 15px;
-}
+    // Bouncing effect logic
+    const circles = document.querySelectorAll(".container");
+    const speed = 0.3; // Slow movement speed
+    let directions = circles.length ? Array.from({ length: circles.length }, () => ({
+        x: Math.random() * 2 - 1,
+        y: Math.random() * 2 - 1
+    })) : [];
 
-.conversion-label {
-    font-size: 14px;
-}
+    function moveCircles() {
+        circles.forEach((circle, index) => {
+            let rect = circle.getBoundingClientRect();
+            let parentRect = document.body.getBoundingClientRect();
 
-input[type="number"] {
-    width: 80px;
-    padding: 5px;
-    margin-left: 5px;
-    background: transparent;
-    border: 1px solid white;
-    color: white;
-    text-align: center;
-}
+            let left = rect.left + directions[index].x * speed;
+            let top = rect.top + directions[index].y * speed;
 
-input[type="number"]:disabled {
-    opacity: 0.6;
-}
+            if (left <= 0 || left + rect.width >= parentRect.width) {
+                directions[index].x *= -1;
+            }
+            if (top <= 0 || top + rect.height >= parentRect.height) {
+                directions[index].y *= -1;
+            }
+
+            circle.style.left = `${left}px`;
+            circle.style.top = `${top}px`;
+        });
+
+        requestAnimationFrame(moveCircles);
+    }
+
+    moveCircles();
+});
