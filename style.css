@@ -27,7 +27,7 @@ body {
     min-height: 350px;
     padding: 15px;
     border-radius: 50%;
-    background: rgba(30, 30, 30, 0.75); /* Dark but slightly transparent */
+    background: rgba(30, 30, 30, 0.8); /* Dark but slightly transparent */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,12 +38,12 @@ body {
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
 }
 
-/* **Refined Color Palette (Aesthetic & Muted)** */
-h1.title { color: #C8A2C8; }  /* Lavender */
-h2.target-text { color: #9CAF88; }  /* Sage Green */
-p.description { color: #F88379; }  /* Soft Coral */
-.conversion-label { color: #87CEEB; }  /* Sky Blue */
-.net-worth { color: #F7E7CE; }  /* Champagne Beige */
+/* **Refined Color Palette (Aesthetic & Brighter)** */
+h1.title { color: #9966CC; }  /* Bright Amethyst */
+h2.target-text { color: #50C878; }  /* Vibrant Emerald */
+p.description { color: #FF6F61; }  /* Warm Coral */
+.conversion-label { color: #00AEEF; }  /* Sky Cyan Blue */
+.net-worth { color: #D2B48C; }  /* Rich Sand Beige */
 
 /* Larger Font Size & Better Spacing */
 h1, h2, p, .conversion-rate {
