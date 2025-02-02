@@ -27,7 +27,7 @@ body {
     min-height: 350px;
     padding: 15px;
     border-radius: 50%;
-    background: rgba(30, 30, 30, 0.8);
+    background: rgba(30, 30, 30, 0.75); /* Dark but slightly transparent */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,12 +38,12 @@ body {
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
 }
 
-/* **Refined Color Palette** */
-h1.title { color: #FFD700; }  /* Gold */
-h2.target-text { color: #40E0D0; }  /* Turquoise */
-p.description { color: #FFB6C1; }  /* Light Pink */
-.conversion-label { color: #87CEFA; }  /* Bright Sky Blue */
-.net-worth { color: #FFFF99; }  /* Light Yellow */
+/* **Refined Color Palette (Aesthetic & Muted)** */
+h1.title { color: #C8A2C8; }  /* Lavender */
+h2.target-text { color: #9CAF88; }  /* Sage Green */
+p.description { color: #F88379; }  /* Soft Coral */
+.conversion-label { color: #87CEEB; }  /* Sky Blue */
+.net-worth { color: #F7E7CE; }  /* Champagne Beige */
 
 /* Larger Font Size & Better Spacing */
 h1, h2, p, .conversion-rate {
