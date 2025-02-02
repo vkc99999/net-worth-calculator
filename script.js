@@ -22,16 +22,11 @@ document.addEventListener("DOMContentLoaded", function() {
         let networthInrTeluguElem = document.getElementById("networth_inr_telugu");
 
         if (networthUsdElem && networthInrElem) {
-            networthUsdElem.innerText = `$${totalNetWorthUSD.toFixed(2)}`;
-            networthInrElem.innerText = `₹${netWorthINR.toFixed(2)}`;
-            networthUsdTeluguElem.innerText = `$${totalNetWorthUSD.toFixed(2)}`;
-            networthInrTeluguElem.innerText = `₹${netWorthINR.toFixed(2)}`;
-
-            // Apply correct styles dynamically
-            networthUsdElem.classList.add("last-line-1");
-            networthInrElem.classList.add("last-line-2");
-            networthUsdTeluguElem.classList.add("last-line-1");
-            networthInrTeluguElem.classList.add("last-line-2");
+            // Directly apply styles in JavaScript
+            networthUsdElem.innerHTML = `<span style="color:#FF1493; text-shadow: 0px 0px 15px rgba(255, 20, 147, 1);">$${totalNetWorthUSD.toFixed(2)}</span>`;
+            networthInrElem.innerHTML = `<span style="color:#FF8C00; text-shadow: 0px 0px 15px rgba(255, 140, 0, 1);">₹${netWorthINR.toFixed(2)}</span>`;
+            networthUsdTeluguElem.innerHTML = `<span style="color:#FF1493; text-shadow: 0px 0px 15px rgba(255, 20, 147, 1);">$${totalNetWorthUSD.toFixed(2)}</span>`;
+            networthInrTeluguElem.innerHTML = `<span style="color:#FF8C00; text-shadow: 0px 0px 15px rgba(255, 140, 0, 1);">₹${netWorthINR.toFixed(2)}</span>`;
         }
     }
 
