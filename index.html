@@ -1,6 +1,4 @@
-# Updated HTML content with hardcoded 2027 target values and dynamic INR conversion
-
-updated_html_content = f"""<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,9 +13,8 @@ updated_html_content = f"""<!DOCTYPE html>
             <h1>Net Worth Calculator</h1>
 
             <h2 class="summary-text" id="target_2027">
-                2027 Year-End Target: <span id="target_usd">${total_net_worth_usd:,.2f}</span> 
-                (<span id="target_inr">₹{total_net_worth_inr:,.2f}</span>) 
-                (using dollar conversion rate <span id="conversion_display">86.70</span>)
+                2027 Year-End Target: <span id="target_usd">$2,085,056.25</span> 
+                (<span id="target_inr">₹180,774,376.88</span>)
             </h2>
 
             <p class="summary-text">
@@ -40,9 +37,8 @@ updated_html_content = f"""<!DOCTYPE html>
             <h1>నికర సంపద గణన</h1>
 
             <h2 class="summary-text" id="target_2027_telugu">
-                2027 సంవత్సరం చివరి లక్ష్యం: <span id="target_usd_telugu">${total_net_worth_usd:,.2f}</span> 
-                (<span id="target_inr_telugu">₹{total_net_worth_inr:,.2f}</span>) 
-                (డాలర్ మార్పిడి రేటు <span id="conversion_display_telugu">86.70</span> ఉపయోగించి)
+                2027 సంవత్సరం చివరి లక్ష్యం: <span id="target_usd_telugu">$2,085,056.25</span> 
+                (<span id="target_inr_telugu">₹180,774,376.88</span>)
             </h2>
 
             <p class="summary-text">
@@ -64,34 +60,26 @@ updated_html_content = f"""<!DOCTYPE html>
 
     <script src="script.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {{
+        document.addEventListener("DOMContentLoaded", function() {
             const conversionRateInput = document.getElementById("conversion_rate");
 
-            function updateTargetConversion() {{
+            function updateTargetConversion() {
                 let usdToInrRate = parseFloat(conversionRateInput.value) || 86.70;
-                let targetUsd = {total_net_worth_usd};
+                let targetUsd = 2085056.25;
                 let targetInr = targetUsd * usdToInrRate;
 
-                document.getElementById("target_usd").innerText = `$${{targetUsd.toFixed(2)}}`;
-                document.getElementById("target_inr").innerText = `₹${{targetInr.toFixed(2)}}`;
+                document.getElementById("target_usd").innerText = `$${targetUsd.toFixed(2)}`;
+                document.getElementById("target_inr").innerText = `₹${targetInr.toFixed(2)}`;
                 document.getElementById("conversion_display").innerText = usdToInrRate;
 
-                document.getElementById("target_usd_telugu").innerText = `$${{targetUsd.toFixed(2)}}`;
-                document.getElementById("target_inr_telugu").innerText = `₹${{targetInr.toFixed(2)}}`;
+                document.getElementById("target_usd_telugu").innerText = `$${targetUsd.toFixed(2)}`;
+                document.getElementById("target_inr_telugu").innerText = `₹${targetInr.toFixed(2)}`;
                 document.getElementById("conversion_display_telugu").innerText = usdToInrRate;
-            }}
+            }
 
             conversionRateInput.addEventListener("input", updateTargetConversion);
             updateTargetConversion();
-        }});
+        });
     </script>
 </body>
 </html>
-"""
-
-# Save the updated HTML file
-updated_html_filename = "/mnt/data/net_worth_calculator_updated.html"
-with open(updated_html_filename, "w") as file:
-    file.write(updated_html_content)
-
-updated_html_filename
