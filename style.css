@@ -14,19 +14,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4vw;
+    gap: 3vw;
     flex-wrap: wrap;
 }
 
-/* 🔹 **Smaller Circle & Better Spacing** */
+/* 🔹 **Smaller Circles & Ensuring Text Fits** */
 .container {
-    width: 34vw; /* Reduced size */
+    width: 34vw; /* Slightly bigger to accommodate text */
     height: 34vw;
-    min-width: 300px;
-    min-height: 300px;
+    min-width: 320px; /* Ensures good size on mobile */
+    min-height: 320px;
     padding: 15px;
     border-radius: 50%;
-    background: rgba(20, 20, 20, 0.85); /* Slightly darker */
+    background: rgba(20, 20, 20, 0.85); /* Dark but slightly transparent */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,40 +35,42 @@ body {
     position: absolute;
     border: 3px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
-    overflow: hidden; /* Ensures text always stays inside */
+    overflow: hidden; /* Ensures text stays inside */
 }
 
-/* **🔥 ULTRA BRIGHT COLOR PALETTE** */
-h1.title { color: #BF40BF; }  /* Electric Purple */
-h2.target-text { color: #39FF14; }  /* Neon Green */
-p.description { color: #FF4500; }  /* Fiery Red */
-.conversion-label { color: #00FFFF; }  /* Brilliant Cyan */
-.net-worth { color: #FFD700; }  /* Dazzling Gold */
+/* **🔥 BRIGHT & BOLD COLOR PALETTE** */
+h1.title { color: #A020F0; font-size: 2.3vw; font-weight: bold; }  /* Electric Purple */
+h2.target-text { color: #39FF14; font-size: 1.8vw; font-weight: bold; }  /* Neon Green */
+p.description { color: #FF4500; font-size: 1.5vw; font-weight: bold; }  /* Fiery Red */
+.conversion-label { color: #00FFFF; font-size: 1.4vw; font-weight: bold; }  /* Brilliant Cyan */
+.net-worth { color: #FFD700; font-size: 1.6vw; font-weight: bold; }  /* Dazzling Gold */
 
-/* 🔹 **Last Two Key Lines** - Extra Bright */
-p.highlight-1 { color: #FF9F00; font-weight: bold; }  /* Blazing Orange */
-p.highlight-2 { color: #FF00FF; font-weight: bold; }  /* Vivid Magenta */
+/* 🔹 **Key Highlight Lines** */
+p.third-line { color: #FF8C00; font-size: 1.7vw; font-weight: bold; }  /* Vivid Orange */
+p.highlight-1 { color: #0074E4; font-size: 1.7vw; font-weight: bold; }  /* Deep Electric Blue */
+p.highlight-2 { color: #0074E4; font-size: 1.7vw; font-weight: bold; }  /* Same blue for consistency */
 
 /* 🔹 **Better Text Spacing & Wrapping** */
 h1, h2, p, .conversion-rate {
-    margin: 5px 0;
-    padding: 2px 6px;
-    font-size: 1.1vw; /* Slightly smaller to fit better */
+    margin: 6px 0;
+    padding: 4px 6px;
+    font-size: 1.6vw; /* Increased size for better visibility */
     text-align: center;
     line-height: 1.4em; /* More spacing for multiple lines */
-    word-wrap: break-word; /* Ensures text breaks into multiple lines */
+    word-wrap: break-word; /* Ensures text wraps properly */
 }
 
 /* Adjust Input Box */
 input[type="number"] {
-    width: 75px;
-    padding: 5px;
+    width: 80px;
+    padding: 6px;
     margin-left: 5px;
     background: transparent;
-    border: 1px solid white;
+    border: 2px solid white;
     color: white;
     text-align: center;
-    font-size: 1vw;
+    font-size: 1.5vw; /* Increased size */
+    font-weight: bold;
 }
 
 input[type="number"]:disabled {
