@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("target_inr").innerText = `₹${targetInr.toFixed(2)}`;
     }
 
-    conversionRateInput.addEventListener("input", updateTargetConversion);
+    setInterval(updateTargetConversion, 100); // Update every 100ms (10 times per second)
     updateTargetConversion();
 
     // Movement Logic with Collision Prevention
     const circles = document.querySelectorAll(".container");
-    const speed = 0.2;
+    const speed = 0.3;
     let positions = [];
 
     circles.forEach((circle, index) => {
