@@ -19,46 +19,44 @@ body {
     flex-wrap: wrap;
 }
 
-/* Bigger Circles to Fit Content */
+/* Circles now fit better & move properly */
 .container {
-    width: 38vw; /* Increased to fit text */
+    width: 38vw;
     height: 38vw;
     min-width: 350px;
     min-height: 350px;
-    padding: 10px;
+    padding: 15px;
     border-radius: 50%;
-    background: rgba(30, 30, 30, 0.75); /* Dark Gray Transparent */
+    background: rgba(30, 30, 30, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
+    position: absolute;
     border: 3px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
 }
 
-/* Different Colors for Each Sentence */
+/* Brighter Colors */
 h1.title { color: #FFD700; }  /* Gold */
-h2.target-text { color: #32CD32; }  /* Lime Green */
-p.description { color: #FF4500; }  /* Orange Red */
-.conversion-label { color: #4B0082; }  /* Indigo */
-.net-worth { color: #8B0000; }  /* Maroon */
-p.usd-text { color: #4682B4; }  /* Steel Blue */
-p.inr-text { color: #C0C0C0; }  /* Silver */
+h2.target-text { color: #50C878; }  /* Emerald */
+p.description { color: #FF7F50; }  /* Coral */
+.conversion-label { color: #4682B4; }  /* Blue */
+.net-worth { color: #FFFFFF; }  /* White */
 
-/* Adjust Text Spacing */
+/* Larger Font Size & Better Spacing */
 h1, h2, p, .conversion-rate {
-    margin: 3px 0;
+    margin: 4px 0;
     padding: 2px 8px;
-    font-size: 1vw;
+    font-size: 1.3vw; /* Bigger text */
     text-align: center;
 }
 
 /* Adjust Input Box */
 input[type="number"] {
-    width: 70px;
-    padding: 3px;
+    width: 75px;
+    padding: 5px;
     margin-left: 5px;
     background: transparent;
     border: 1px solid white;
