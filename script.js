@@ -13,31 +13,57 @@ document.addEventListener("DOMContentLoaded", function () {
     conversionRateInput.addEventListener("input", updateTargetConversion);
     updateTargetConversion();
 
-    // Bouncing effect logic
+    // Movement Logic with Collision Prevention
     const circles = document.querySelectorAll(".container");
-    const speed = 0.3; // Slow movement speed
-    let directions = circles.length ? Array.from({ length: circles.length }, () => ({
-        x: Math.random() * 2 - 1,
-        y: Math.random() * 2 - 1
-    })) : [];
+    const speed = 0.2;
+    let positions = [];
+
+    circles.forEach((circle, index) => {
+        let x = Math.random() * (window.innerWidth - circle.clientWidth);
+        let y = Math.random() * (window.innerHeight - circle.clientHeight);
+        let dx = Math.random() * 2 - 1;
+        let dy = Math.random() * 2 - 1;
+
+        positions.push({ x, y, dx, dy });
+        circle.style.left = `${x}px`;
+        circle.style.top = `${y}px`;
+    });
 
     function moveCircles() {
         circles.forEach((circle, index) => {
-            let rect = circle.getBoundingClientRect();
-            let parentRect = document.body.getBoundingClientRect();
+            let pos = positions[index];
 
-            let left = rect.left + directions[index].x * speed;
-            let top = rect.top + directions[index].y * speed;
-
-            if (left <= 0 || left + rect.width >= parentRect.width) {
-                directions[index].x *= -1;
+            // Bounce off the walls
+            if (pos.x <= 0 || pos.x + circle.clientWidth >= window.innerWidth) {
+                pos.dx *= -1;
             }
-            if (top <= 0 || top + rect.height >= parentRect.height) {
-                directions[index].y *= -1;
+            if (pos.y <= 0 || pos.y + circle.clientHeight >= window.innerHeight) {
+                pos.dy *= -1;
             }
 
-            circle.style.left = `${left}px`;
-            circle.style.top = `${top}px`;
+            // Update position
+            pos.x += pos.dx * speed;
+            pos.y += pos.dy * speed;
+            circle.style.left = `${pos.x}px`;
+            circle.style.top = `${pos.y}px`;
+
+            // Prevent circles from colliding
+            circles.forEach((otherCircle, otherIndex) => {
+                if (index !== otherIndex) {
+                    let rect1 = circle.getBoundingClientRect();
+                    let rect2 = otherCircle.getBoundingClientRect();
+
+                    if (
+                        rect1.left < rect2.right &&
+                        rect1.right > rect2.left &&
+                        rect1.top < rect2.bottom &&
+                        rect1.bottom > rect2.top
+                    ) {
+                        pos.dx *= -1;
+                        pos.dy *= -1;
+                    }
+                }
+            });
         });
 
         requestAnimationFrame(moveCircles);
