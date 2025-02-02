@@ -18,13 +18,13 @@ body {
     flex-wrap: wrap;
 }
 
-/* 🔹 **Smaller Circles & Ensuring Text Fits** */
+/* 🔹 **Adjusted Circle Size & Padding** */
 .container {
-    width: 34vw; /* Slightly bigger to accommodate text */
-    height: 34vw;
-    min-width: 320px; /* Ensures good size on mobile */
+    width: 35vw; /* Slightly increased for better fit */
+    height: 35vw;
+    min-width: 320px;
     min-height: 320px;
-    padding: 15px;
+    padding: 20px; /* Increased padding to prevent text cut-off */
     border-radius: 50%;
     background: rgba(20, 20, 20, 0.85); /* Dark but slightly transparent */
     display: flex;
@@ -35,29 +35,29 @@ body {
     position: absolute;
     border: 3px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
-    overflow: hidden; /* Ensures text stays inside */
+    overflow: hidden; /* Ensures text does not overflow */
 }
 
-/* **🔥 BRIGHT & BOLD COLOR PALETTE** */
-h1.title { color: #A020F0; font-size: 2.3vw; font-weight: bold; }  /* Electric Purple */
-h2.target-text { color: #39FF14; font-size: 1.8vw; font-weight: bold; }  /* Neon Green */
-p.description { color: #FF4500; font-size: 1.5vw; font-weight: bold; }  /* Fiery Red */
-.conversion-label { color: #00FFFF; font-size: 1.4vw; font-weight: bold; }  /* Brilliant Cyan */
-.net-worth { color: #FFD700; font-size: 1.6vw; font-weight: bold; }  /* Dazzling Gold */
+/* **🔥 Adjusted Font Sizes & Ensured Proper Fit** */
+h1.title { color: #A020F0; font-size: 2vw; font-weight: bold; }  /* Electric Purple */
+h2.target-text { color: #39FF14; font-size: 1.6vw; font-weight: bold; }  /* Neon Green */
+p.description { color: #FF4500; font-size: 1.3vw; font-weight: bold; }  /* Fiery Red */
+.conversion-label { color: #00FFFF; font-size: 1.3vw; font-weight: bold; }  /* Brilliant Cyan */
+.net-worth { color: #FFD700; font-size: 1.4vw; font-weight: bold; }  /* Dazzling Gold */
 
-/* 🔹 **Key Highlight Lines** */
-p.third-line { color: #FF8C00; font-size: 1.7vw; font-weight: bold; }  /* Vivid Orange */
-p.highlight-1 { color: #0074E4; font-size: 1.7vw; font-weight: bold; }  /* Deep Electric Blue */
-p.highlight-2 { color: #0074E4; font-size: 1.7vw; font-weight: bold; }  /* Same blue for consistency */
+/* 🔹 **Key Highlight Lines (More Space, No Cutoff)** */
+p.third-line { color: #FF8C00; font-size: 1.5vw; font-weight: bold; margin-bottom: 8px; }  /* Vivid Orange */
+p.highlight-1 { color: #0074E4; font-size: 1.5vw; font-weight: bold; margin-bottom: 4px; }  /* Deep Electric Blue */
+p.highlight-2 { color: #0074E4; font-size: 1.5vw; font-weight: bold; }  /* Consistent Blue */
 
-/* 🔹 **Better Text Spacing & Wrapping** */
+/* 🔹 **Better Text Spacing & Wrapping to Prevent Cutoff** */
 h1, h2, p, .conversion-rate {
     margin: 6px 0;
-    padding: 4px 6px;
-    font-size: 1.6vw; /* Increased size for better visibility */
+    padding: 6px 8px;
+    font-size: 1.4vw; /* Adjusted for better fitting */
     text-align: center;
-    line-height: 1.4em; /* More spacing for multiple lines */
-    word-wrap: break-word; /* Ensures text wraps properly */
+    line-height: 1.5em; /* More spacing for text */
+    word-wrap: break-word; /* Ensures text breaks neatly */
 }
 
 /* Adjust Input Box */
@@ -69,7 +69,7 @@ input[type="number"] {
     border: 2px solid white;
     color: white;
     text-align: center;
-    font-size: 1.5vw; /* Increased size */
+    font-size: 1.4vw; /* Adjusted */
     font-weight: bold;
 }
 
