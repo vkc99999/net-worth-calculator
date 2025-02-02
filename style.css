@@ -1,10 +1,10 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
     font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
     background-color: #121212;
-    color: white;
+    color: #FFFFFF;
+    overflow: hidden; /* Prevents scrollbars due to floating effect */
 }
 
 .container-wrapper {
@@ -12,46 +12,71 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    gap: 10px; /* Reduced space between elements */
     flex-wrap: wrap;
-    gap: 20px;
+    position: relative;
 }
 
-/* Circle Design with 1mm Edge Gap */
 .container {
-    width: 30vw;
-    height: 30vw;
-    min-width: 250px;
-    min-height: 250px;
-    padding: 20px;
-    border-radius: 50%;
-    backdrop-filter: blur(8px);
-    box-shadow: 0px 0px 1mm rgba(255, 255, 255, 0.2); /* 1mm Edge Gap */
+    width: 320px;
+    height: 320px;
+    padding: 15px;
+    border-radius: 50%; /* Makes circles */
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+    background-color: #4B0082;
+    color: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
-    border: 1mm solid rgba(255, 255, 255, 0.3); /* Creates the enclosed effect */
+    position: absolute;
+    animation: floatAnimation 5s infinite ease-in-out alternate;
 }
 
-/* Modern Color Scheme for Sentences */
-h1 { color: #A3C9A8; } /* Soft Green */
-h2 { color: #C9A3C3; } /* Muted Lavender */
-p { color: #A3B8C9; } /* Cool Blue */
-.summary-text { color: #C9C3A3; } /* Warm Sand */
-.conversion-label { color: #A3C9C3; } /* Teal Tint */
+@keyframes floatAnimation {
+    from {
+        transform: translateY(-10px);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
 
-input[type="number"] {
-    width: 80px;
+.summary-text {
+    color: #FFD700;
+    font-size: 14px; /* Reduced size */
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.net-worth {
+    color: #32CD32;
+    font-weight: bold;
+    font-size: 18px; /* Keep numbers readable */
+}
+
+h1 {
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+p {
+    font-size: 14px;
+}
+
+/* Adjust input box */
+.conversion-rate input {
+    width: 70px;
     padding: 5px;
-    margin-left: 5px;
-    background: transparent;
-    border: 1px solid white;
-    color: white;
     text-align: center;
-}
-
-input[type="number"]:disabled {
-    opacity: 0.6;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    background: #2C2C2C;
+    color: #FFFFFF;
+    font-weight: bold;
 }
