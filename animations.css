@@ -1,16 +1,1 @@
-.container {
-    animation: float 6s infinite ease-in-out alternate, bounce 8s infinite linear;
-}
 
-@keyframes float {
-    from { transform: translateY(-10px) rotate(2deg); }
-    to { transform: translateY(10px) rotate(-2deg); }
-}
-
-@keyframes bounce {
-    0% { top: 5%; left: 5%; }
-    25% { top: 80%; left: 10%; }
-    50% { top: 60%; left: 80%; }
-    75% { top: 10%; left: 40%; }
-    100% { top: 5%; left: 5%; }
-}
